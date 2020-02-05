@@ -45,7 +45,7 @@ $couleurProduit = $infoProduct["pro_couleur"];
 		<br>
 						
 		<div class="text-center">
-			<form action=" " method="POST" id="formulaire_ajout_produit" enctype="multipart/form-data">
+			<form action="../controllers/control_update.php" method="POST" id="formulaire_ajout_produit" enctype="multipart/form-data">
 				<input type="hidden" name="pro_id" value="<?php echo $_GET["pro_id"]; ?>">
 				<fieldset>
 					<label for="reference">Référence : <input value="<?php if (isset($refProduit)) { echo $refProduit; } ?>" class="form-control" id="reference" type="text" name="reference"></label><br>
