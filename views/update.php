@@ -63,7 +63,7 @@ $photoProduit = $infoProduct["pro_photo"];
 							<label for="libelle">Nom du produit : <input value="<?php if (isset($nomProduit)) { echo $nomProduit; } ?>"class="form-control" id="libelle" type="text" name="libelle"></label><br>
 							<span id="libelle_manquant"></span><br>
 
-							<label for="descritiption">Description : <textarea value="<?php if (isset($decriProduit)) { echo $decriProduit; } ?>" class="form-control" id="description" type="text" name="description"></textarea> </label><br>
+							<label for="descritiption">Description : <textarea class="form-control" id="description" name="description"><?php if (isset($decriProduit)) { echo $decriProduit; } ?></textarea> </label><br>
 							<span id="description_manquante"></span><br>
 							
 							<label for="prix">Prix : <input value="<?php if (isset($prixProduit)) { echo $prixProduit; } ?>" class="form-control" id="prix" type="number" name="prix"></label><br>
