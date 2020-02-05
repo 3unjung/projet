@@ -77,7 +77,7 @@ $couleurProduit = $infoProduct["pro_couleur"];
 							
 							<label for="produit_bloquer">Produit bloquer : <input inputmode="produit_bloquer" type="radio" value="oui"> Oui <input type="radio" name="produit_bloquer" value="non"> Non </label><br>
 
-							<input class="col-1-form-control btn" type="file" value="<?php if (isset($photoProduit)) { echo $photoProduit; } else { 'Insérer un fichier';} ?>" name="fichier"><br> <br>
+							<label for="photo_produit">Photo du produit : <input class="col-1-form-control btn" type="file" value="<?php if (isset($photoProduit)) { echo $photoProduit; } else { 'Insérer un fichier';} ?>" name="fichier"></label><br> <br>
 
 							<input type="submit" value="Valider" class="btn btn-dark" id="bouton_envoi" name="bouton_envoi">
 							<input type="reset" value="Anuler" class="btn btn-dark"id="bouton_annuler" name="bouton_cancel"><br>
