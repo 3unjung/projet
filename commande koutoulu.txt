@@ -1,0 +1,36 @@
+cd /mnt/c/wamp64/www/jarditou
+git clone <url d'un supositoire>  // télécharge un projet git
+git pull // prend les fichiers des autres
+git add . /// // je veux que tous les fichiers soient envoyés et . représente *
+git commit // envoit les fichiers selectionner
+git push // met les changements que je dois expliquer en ligne
+home/eunjung // mon acceuil je suppose
+git config credential.helper store // configure git
+
+
+commandes utiles :
+dir = ls
+rm = remove 
+-r = recursif (supprime l'intégral d'un fichier, applique infinement la prédédante opération)
+git config credential.helper store => save les id prochaine fois que l'on les tape
+
+
+---------------------------notions utiles---------------------
+./ exécute un fichier .sh
+bash = bourne-Aaain shell est un interpréteur en ligne de commande de type scrip pour unbutu
+.sh extension des fichiers écrit en bash
+
+
+-------------------importer un repertoire---------------------
+début
+création d'un repertoire
+allez au repertoire  pour git
+copier les 6 lignes du début de la création du repertoire
+git add . pour selectionner tous les fichiers du répertoire
+git commit -m  + "un_message_ici" pour selectionner tous les fichiers du répertoire et -m permet de pas afficher l'ecran de selection des fichiers sélectionnés
+git push envoit les fichiers sélectionnés
+identification 
+fin
+
+-------------------récupérer des modifications----------------
+git pull pour importer les modifications des autres

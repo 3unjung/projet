@@ -1,0 +1,34 @@
++_____________Nom_____________________code_____________Type de longeur__+
+|Nombre annuel de touriste           nbAnTouri           Numérique 9    |
+|Numéro de code postal                  Cp               Numérique 5    |
+|Longeur de plage en km                 LongPlage        Décimal, 6.3   |
+|Numéro nature du terrain               NumNat           Numérique 2    |
+|Numéro de plage                        NumPlage         Numérique 2    |
+|Numério de région                      NumReg            integer       |
+|Numéro de responsable                  NumResp           Numérique 2   |
+|Libellé nature de terrain              LibNature         varchar(50)   |
+|Nom de la plage                        NomPlag           varchar(50)   |
+|Nom de région                          NomReg            varchar(50)   |
+|Nom de responsable                     NomResp           varchar(50)   |
+|Nom de la ville                        NomVille          varchar(50)   |
+|Prénom du responsable                  PreResp           varchar(50)   |
++_______________________________________________________________________+
+
+
++______Libelle_____________Code___________Type_______________Observation+
+|Numério du stagiare       Sta_id          integer(10)        >0unique  |
+|                          Sta_nom         varchar(50)                  |
+|                          Sta_prenom      varchar(50)                  |
+|                          Sta_sex         varchar(1)         h/f       |
+|    	                   Sta_adresse     varchar(50)                  |
+|                          Sta_ville       varchar(50)                  |
+|                          Sta_pscode      integer(10)                  |
+|                          sta_naissance   date               jj/mm/aaaa|
+|                          for_id          integer(10)                  |
+|                          for_intitule    varchar(50)                  |
+|                          for_niveau      integer(1)                   |
+|                          for_titre       boolen               0/N     |
+|                          for_duree       integer              jours   |
+|                          for_datedebut   date               jj/mm/aaaa|
+|                          for_datefin     date               jj/mm/aaaa|
++_______________________________________________________________________+
