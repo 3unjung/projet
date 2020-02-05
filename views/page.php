@@ -55,7 +55,7 @@
           <h5>Identifiant : <?php echo $key->pro_id; ?></h5>
           <h5>Référence produit : <?php echo $key->pro_ref; ?></h5>
           <h5>Description du produit : <?php echo $key->pro_description; ?></h5>
-          <h5>POh rix : <?php echo $key->pro_prix; ?>&nbsp;€</h5>
+          <h5>Prix : <?php echo $key->pro_prix; ?>&nbsp;€</h5>
           <h5>Date d'ajout : <?php echo $key->pro_d_ajout; ?></h5>
 
 
