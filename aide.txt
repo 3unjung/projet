@@ -21,4 +21,5 @@ Et après je peux prendre mon café c'est fetch(), ou autre fonctions spécial.
 on utilise array() quand il y'a un ou  plusieurs ? dans une requète.
 array() à besoin des valeurs des ? pour exécuter la requète.
 
-
+----------------------------------Gitbite-------------------------------------
+merge => fusion = résolution des conflits
