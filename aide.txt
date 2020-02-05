@@ -6,13 +6,13 @@ x->y = x["y"] on récupère y de l'objet x
 
 ----------------------------------Tableau----------------------------------------
 tableau =  [7 => "j'ai ceci à l'index 7 du tableau"]
-tableau[""] = extrait une donnée d'un tableau
+tableau[""] => extrait une donnée d'un tableau
 -----------------------------------BINDVALUE--------------------------------------
 BINDVALUE est un équivalent des  = ? en requète sql
 à partir de 3 inconnus valeurs ? on doit utilisait un bindvalue pour soulager la requète
 on utilise execute(array) quand on n'utilise pas des bindvalue mais des ?
 
--------------------------------REQUETE PREPARE-----------------------------------
+-------------------------------REQUETE PREPARE--------------------------------------
 Je veux un café :
 Je demande si on peut me rendre un service c'est prepare()
 On détail ma commande donc remplacer les ? par des valeurs donc c'est execute()
@@ -21,5 +21,8 @@ Et après je peux prendre mon café c'est fetch(), ou autre fonctions spécial.
 on utilise array() quand il y'a un ou  plusieurs ? dans une requète.
 array() à besoin des valeurs des ? pour exécuter la requète.
 
-----------------------------------Gitbite-------------------------------------
+----------------------------------Gitbite-------------------------------------------
 merge => fusion = résolution des conflits
+rm => remove 
+-r => recursif (supprime l'intégral d'un fichier, applique infinement la prédédante opération)
+git config credential.helper store => save les id prochaine fois que l'on les tape

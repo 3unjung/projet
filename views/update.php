@@ -27,7 +27,6 @@ $decriProduit = $infoProduct["pro_description"];
 $prixProduit = $infoProduct["pro_prix"];
 $stockProduit = $infoProduct["pro_stock"];
 $couleurProduit = $infoProduct["pro_couleur"];
-$photoProduit = $infoProduct["pro_photo"];
 
 ?>
 <head>
