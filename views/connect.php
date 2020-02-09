@@ -3,6 +3,35 @@
 <html lang="fr">
 <?php require("../controllers/connexion.php"); ?>
 <?php require("../controllers/controlConnexion.php"); ?>
+<?php require("../controllers/fonction.php"); ?>
+
+<?php
+if (isset($_POST["inscription"])) {
+  header("location:  ./sessions.php"); // retourne à la plage d'inscription
+}
+
+if (isset($_POST["passwordForget"])) {
+  if (empty($_POST["login"])) {
+    $erreur = "Entrez votre identifiant et nous vous enverrons un mail si un compte existe avec cet identifiant";
+  } else {
+    $db = connexionBase();
+    $req = $db->prepare("SELECT * from users WHERE identifiant = ?");
+    $req->execute(array($_POST["login"]));
+    $infos = $req->fetch();
+    if (isset($infos["id"])) {
+      $id = $infos["id"];
+      $link = generateRandomString(40);
+      $req = $db->prepare("UPDATE users SET mdp = ? WHERE id = ?");
+      $req->execute(array($link, $id));
+      $msg = '<!DOCTYPE html> <html lang="fr"> <form action="http://localhost/jarditou/views/passwordForget.php?id=' . $id . '&link=' . $link . '" method="POST"> <input type="submit" name="passwordForget" value="Choisir un nouveau mot de passe">';
+      $msg = wordwrap($msg,70);
+      mail("hellogoodbye1853@gmail.com", "Jarditou - Mot de passe oublié", $msg);
+    } else {
+      $erreur = "Cet identifiant n'existe pas, veuillez vous inscrire";
+    }
+  }
+}
+?>
 
 <!-- vérifie si l'utilisateur ne fait pas n'importe quoi -->
 
@@ -43,17 +72,6 @@
           <input type="submit" name="connexion" value="Je me connecte !" class="btn btn-dark">
           <input type="submit" name="inscription" value="Où je m'inscrit !" class="btn btn-dark"><br><br>
           <input type="submit" name="passwordForget" value="Mot de passe oublier?" class="btn btn-dark"><br><br><br>
-
-
-          <?php
-          if (isset($_POST["inscription"])) {
-            if ($_POST["inscription"]) {
-              header("location:  ./sessions.php"); // retourne à la plage d'inscription
-
-            }
-          } else {
-          }
-          ?>
 
         </fieldset><br>
       </form><br>
