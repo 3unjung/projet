@@ -1,21 +1,21 @@
 --------------------------------BASE DE DONNEE----------------------------------
-PDO:: = Concerne tous les arguments utilisable
+PDO:: = Concerne tous les arguments utilisable.
 
 ----------------------------------OBJECT----------------------------------------
-x->y = x["y"] on récupère y de l'objet x 
+x->y = x["y"] on récupère y de l'objet x.
 
 ----------------------------------Tableau----------------------------------------
-tableau =  [7 => "j'ai ceci à l'index 7 du tableau"]
-tableau[""] => extrait une donnée d'un tableau
+tableau =  [7 => "j'ai ceci à l'index 7 du tableau"].
+tableau[""] => extrait une donnée d'un tableau.
 -----------------------------------BINDVALUE--------------------------------------
 BINDVALUE est un équivalent des  = ? en requète sql
-à partir de 3 inconnus valeurs ? on doit utilisait un bindvalue pour soulager la requète
-on utilise execute(array) quand on n'utilise pas des bindvalue mais des ?
+à partir de 3 inconnus valeurs ? on doit utilisait un bindvalue pour soulager la requète.
+on utilise execute(array) quand on n'utilise pas des bindvalue mais des ?.
 
 -------------------------------REQUETE PREPARE--------------------------------------
 Je veux un café :
-Je demande si on peut me rendre un service c'est prepare()
-On détail ma commande donc remplacer les ? par des valeurs donc c'est execute()
+Je demande si on peut me rendre un service c'est prepare().
+On détail ma commande donc remplacer les ? par des valeurs donc c'est execute().
 Et après je peux prendre mon café c'est fetch(), ou autre fonctions spécial.
 
 on utilise array() quand il y'a un ou  plusieurs ? dans une requète.
@@ -29,5 +29,13 @@ git stash => crée une backup temporaire des fichiers.
 git stash pop => supprime cette backup.
 nano ~/.bashrc => git config --global credential.helper store , mémorise les informations personnelles.
 echo "gif file with text content, hard to read with" > margaux.gif
-nano margaux.gif => édite du text dans le fichier crée précédement.
 mkdir =>make directory, crée un repertoire.
+
+------------------------------------NANO----------------------------------------------------
+nano monfichier.ext => modifie un fichier.
+nano ~/.bashrc => modifie bashrc
+~/ => "dossier par défaut d'ubuntu et bashrc est le nom du fichier que l'on veut modifier.
+bashrc => fichier exécute par ubuntu au démarage.
+PATH=$PATH:<machin> => ajoute le path de notre dossier crée plus haut.
+push.sh => va chercher le fichier push.sh dans tous les fichiers.
+> ceci est une ligne que l'on va supprimer < * => * permet de supprimer la ligne.
