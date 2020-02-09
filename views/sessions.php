@@ -35,14 +35,11 @@ if (isset($_POST["inscription"])) // si le formulaire est envoyé
 ?>
 
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-	crossorigin="anonymous">
-<link rel="stylesheet" href="../assets/css/style.css">
-<title>Inscription</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="../assets/css/style.css">
+	<title>Inscription</title>
 </head>
 
 
@@ -68,32 +65,19 @@ if (isset($_POST["inscription"])) // si le formulaire est envoyé
             echo "<h5><font color ='red'>" . $erreur . "</font></h5>"; // affiche les erreurs
         }
         ?>
-          <br> <label for="prenom">Votre prenom :<input
-						class="form-control" id="prenom" type="text"
-						value="<?php if (isset($prenom)) { echo $prenom; } ?>"
-						name="prenom"></label><br> <label for="nom">Votre nom :<input
-						class="form-control" id="nom"
-						value="<?php if (isset($nom)) {  echo $nom; } ?>" type="text"
-						name="nom"></label><br> <label for="email">Votre adresse mail :<input
-						class="form-control" id="email" type="email"
-						value="<?php if (isset($email)) { echo $email; } ?>" name="email"></label><br>
+		  <br>
+					<label for="prenom">Votre prenom : <input class="form-control" id="prenom" type="text" value="<?php if (isset($prenom)) { echo $prenom; } ?>" name="prenom"></label><br>
+					<label for="nom">Votre nom :<input class="form-control" id="nom" value="<?php if (isset($nom)) {  echo $nom; } ?>" type="text" name="nom"></label><br>
+					<label for="email">Votre adresse mail :<input class="form-control" id="email" type="email" value="<?php if (isset($email)) { echo $email; } ?>" name="email"></label><br>
 
-
-
-					<label for="identifiant">Votre identifiant : <input
-						class="form-control" id="identifiant" type="text"
-						value="<?php if (isset($identifiant)) { echo $idenfiant; } ?>"
-						name="identifiant"></label><br> <label for="mdp">Votre mot de
-						passe :<input class="form-control" id="mdp" type="password"
-						name="mdp">
-					</label><br>
-					<br>
-					<br> <input type="submit" name="inscription" value="Je m'inscris !"
-						class="btn btn-dark" id="inscription">
+					<label for="identifiant">Votre identifiant : <input class="form-control" id="identifiant" type="text" value="<?php if (isset($identifiant)) { echo $idenfiant; } ?>" name="identifiant"></label><br>
+					<label for="mdp">Votre mot de passe :<input class="form-control" id="mdp" type="password" name="mdp"> </label><br><br><br>
+					<input type="submit" name="inscription" value="Je m'inscris !" class="btn btn-dark" id="inscription">
 
 				</fieldset>
 				<br>
 			</form>
+
 			<br>
 
 		</div>
@@ -108,5 +92,4 @@ if (isset($_POST["inscription"])) // si le formulaire est envoyé
     <?php include("./footer.php"); ?>
   </div>
 </body>
-
 </html>

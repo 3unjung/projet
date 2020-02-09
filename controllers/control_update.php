@@ -85,14 +85,14 @@ pro_couleur = :couleur,
 pro_photo = :format,
 pro_d_modif = NOW(), 
 pro_bloque = null
- WHERE pro_id = :pro_id");
+WHERE pro_id = :pro_id");
 
 $insert->bindValue(":categorie", $categorie, PDO::PARAM_INT); // insère la catégorie du produit et change le type de donnée en entier 
 $insert->bindValue(":reference", $reference); // insère la réference de produit 
 $insert->bindValue(":libelle", $libelle); // insère le nom du produit 
 $insert->bindValue(":description", $description); // insère la description du produit 
 $insert->bindValue(":prix", $prix, PDO::PARAM_INT); // insère le prix du produit et change le type de donnée en entier 
-$insert->bindValue(":stock", $stock, PDO::PARAM_INT); // insère la quantité de produit et change le type de donnée en entier
+$insert->bindValue(":stock", $stock, PDO::PARAM_INT); // insère la quantité de produit et change le type de donnée  en entier
 $insert->bindValue(":couleur", $couleur); // insère la couleur du produit 
 $insert->bindValue(":format",  $img_name); // insère le format l'image 
 $insert->bindValue(":pro_id", $pro_id);

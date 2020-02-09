@@ -24,5 +24,7 @@ array() à besoin des valeurs des ? pour exécuter la requète.
 ----------------------------------Gitbite-------------------------------------------
 merge => fusion = résolution des conflits
 rm => remove 
--r => recursif (supprime l'intégral d'un fichier, applique infinement la prédédante opération)
-git config credential.helper store => save les id prochaine fois que l'on les tape
+-r => recursif (supprime l'intégral d'un fichier, applique infinement la prédédante opération).
+git stash => crée une backup temporaire des fichiers.
+git stash pop => supprime cette backup.
+nano ~/.bashrc => git config --global credential.helper store , mémorise les informations personnelles.
