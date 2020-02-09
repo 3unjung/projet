@@ -30,7 +30,7 @@
 				</h2>
 				<p>Notre entreprise familiale met tous son savoir-faie a votre disposition dans le domaine du jardin et du paysagagisme.</p>
 				<p>Créée il y'a 70 ans, notre enteprise vend des fleus, arbustes, maériel à main et motorisés.</p>
-				<p>Implanté à Amiens, nous intevenon dans tous le département de la Somme: Albert, Dolens, Péronne, Abeerville, Corbie.</p>
+				<p>Implanté à Amiens, nous intevenons dans tous le département de la Somme: Albert, Dolens, Péronne, Abeerville, Corbie.</p>
 
 				<h2><strong>Qualité</strong></h2>
 

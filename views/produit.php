@@ -14,8 +14,6 @@
     $libelle = $_POST["libelle"];
     ?>
 
-
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -38,7 +36,7 @@
                 <fieldset>
 
 
-                    <label for="reference">Rérence : <input class="form-control" id="reference" type="text" name="reference"></label><br>
+                    <label for="reference">Rï¿½rence : <input class="form-control" id="reference" type="text" name="reference"></label><br>
                         <span id="reference_manquante"></span><br>
 
 
@@ -64,7 +62,7 @@
                         <label for="prix">Prix : <input class="form-control" id="prix" type="number" name="prix"></label><br>
                         <span id="prix_manquant"></span><br>
 
-                        <label for="stock">Unité en stock : <input class="form-control" id="stock" type="number" name="stock"></label><br>
+                        <label for="stock">Unitï¿½ en stock : <input class="form-control" id="stock" type="number" name="stock"></label><br>
                         <span id="quantite_manquante"></span><br>
 
                         <label for="couleur">Couleur : <input class="form-control" id="couleur" type="text" name="couleur"></label><br>
