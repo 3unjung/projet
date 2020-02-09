@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <?php require("../controllers/connexion.php"); ?>
+<?php include("../controllers/controlSession.php"); ?>
 <!-- vérifie si l'utilisateur ne fait pas n'importe quoi -->
 
 
