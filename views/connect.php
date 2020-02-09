@@ -12,22 +12,22 @@ if (isset($_POST["inscription"])) {
 
 if (isset($_POST["passwordForget"])) {
   if (empty($_POST["login"])) {
-    $erreur = "Entrez votre identifiant et nous vous enverrons un mail si un compte existe avec cet identifiant";
+    $erreur = "Entrez votre identifiant et nous vous enverrons un mail si un compte existe avec cet identifiant."; // retourne une erreur si l'identifiant n'est pas renseigner
   } else {
     $db = connexionBase();
-    $req = $db->prepare("SELECT * from users WHERE identifiant = ?");
-    $req->execute(array($_POST["login"]));
-    $infos = $req->fetch();
+    $req = $db->prepare("SELECT * from users WHERE identifiant = ?"); 
+    $req->execute(array($_POST["login"])); // retourne l'identifint correspondant 
+    $infos = $req->fetch(); // cherche l'id de l'identifiant posté
     if (isset($infos["id"])) {
-      $id = $infos["id"];
-      $link = generateRandomString(40);
-      $req = $db->prepare("UPDATE users SET mdp = ? WHERE id = ?");
-      $req->execute(array($link, $id));
-      $msg = '<!DOCTYPE html> <html lang="fr"> <form action="http://localhost/jarditou/views/passwordForget.php?id=' . $id . '&link=' . $link . '" method="POST"> <input type="submit" name="passwordForget" value="Choisir un nouveau mot de passe">';
-      $msg = wordwrap($msg,70);
-      mail("hellogoodbye1853@gmail.com", "Jarditou - Mot de passe oublié", $msg);
+      $id = $infos["id"]; // retourne l'id de l'utiliateur en question 
+      $link = generateRandomString(40); // appelle la fonction et génère un mot de passe de 40 caractères
+      $req = $db->prepare("UPDATE users SET mdp = ? WHERE id = ?");  // prépare une fonction pour changer le mot de passe
+      $req->execute(array($link, $id)); // on stock le mot de passe provisoire dans la base de donnée
+      $msg = '<!DOCTYPE html> <html lang="fr"> <form action="http://localhost/jarditou/views/passwordForget.php?id=' . $id . '&link=' . $link . '" method="POST"> <input type="submit" name="passwordForget" value="Choisir un nouveau mot de passe">'; // crée un mail avec des inscrutions
+      $msg = wordwrap($msg,70); // coupe une partie de la chaine si elle est trop longue
+      mail("hellogoodbye1853@gmail.com", "Jarditou - Mot de passe oublié", $msg); // envoit le mail 
     } else {
-      $erreur = "Cet identifiant n'existe pas, veuillez vous inscrire";
+      $erreur = "Cet identifiant n'existe pas, veuillez vous inscrire.";
     }
   }
 }
