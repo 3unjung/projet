@@ -39,9 +39,17 @@ function setUsersRole($admin, $id)
 function generateRandomString($length = 10) {
     $characters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     $charactersLength = strlen($characters);
+<<<<<<< HEAD
     $randomString = ""; // initialise $randomString comme vide
     for ($i = 0; $i < $length; $i++) { // à chaque fois que le compteur est inférieur à l'argument, incrémente de 1
         $randomString .= $characters[rand(0, $charactersLength - 1)]; // génère un caractère au hasard
+=======
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $index = rand(0, $charactersLength - 1);
+        $character = $characters[$index];
+        $randomString .= $character;
+>>>>>>> adff55256c4b5f101b0aaba9765256f856755866
     }
     return $randomString; // retourne le mot de passe provisoire.
 }
