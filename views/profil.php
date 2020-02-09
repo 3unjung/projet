@@ -34,7 +34,7 @@ function setUsersRole($admin, $id)
 
 if (isset($_POST["id"])) {
     $userRole = getUsersInfo($_POST["id"])["admin"]; // appel la fonction et envoit la ligne admin
-    setUsersRole(! $userRole, $_POST["id"]);
+    setUsersRole((int)!$userRole, $_POST["id"]);
 
     /*
      * trouve le role de l'utilisateur avec son id
