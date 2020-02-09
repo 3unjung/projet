@@ -28,3 +28,6 @@ rm => remove
 git stash => crée une backup temporaire des fichiers.
 git stash pop => supprime cette backup.
 nano ~/.bashrc => git config --global credential.helper store , mémorise les informations personnelles.
+echo "gif file with text content, hard to read with" > margaux.gif
+nano margaux.gif => édite du text dans le fichier crée précédement.
+mkdir =>make directory, crée un repertoire.
