@@ -32,7 +32,9 @@ function generateRandomString($length = 10) {
     $charactersLength = strlen($characters);
     $randomString = '';
     for ($i = 0; $i < $length; $i++) {
-        $randomString .= $characters[rand(0, $charactersLength - 1)];
+        $index = rand(0, $charactersLength - 1);
+        $character = $characters[$index];
+        $randomString .= $character;
     }
     return $randomString;
 }
