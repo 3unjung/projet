@@ -2,35 +2,9 @@
 <!DOCTYPE html>
 <html lang="fr">
 <?php require("../controllers/connexion.php"); ?>
+<?php require("../controllers/fonction.php"); ?>
 
 <?php
-$db = connexionBase();
-
-// fonction qui récupère toutes les informations de l'utilisateur
-function getUsersInfo($id)
-{ // $id est la contraite de where
-    $db = connexionBase();
-    $userInfo = $db->prepare("SELECT * FROM users WHERE id = ?");
-    $userInfo->execute(array(
-        $id
-    ));
-    return $userInfo->fetch();
-}
-
-/*
- * fonction qui met à jour le role de l'utilisateur
- * si son role est = 0 et que l'administrateur modifie son role
- * il faut respectivement respecter l'ordre de la requète et des arguments sinon admin prendra id et id prendra admin comme paramètre
- */
-function setUsersRole($admin, $id)
-{ // set = mettre une valeur
-    $db = connexionBase();
-    $setRole = $db->prepare("UPDATE users SET admin = ? WHERE id =  ?");
-    $setRole->execute(array(
-        $admin,
-        $id
-    )); // $admin prendra comme valeur 0 ou 1 dans les paramètres
-}
 
 if (isset($_POST["id"])) {
     $userRole = getUsersInfo($_POST["id"])["admin"]; // appel la fonction et envoit la ligne admin
@@ -49,7 +23,9 @@ if (isset($_POST["id"])) {
  */
 if (isset($_GET["id"]) && isset($_SESSION["id"]) && $_SESSION["id"] == $_GET["id"]) {
     $userinfo = getUsersInfo($_GET["id"]); // retourne les informations de l'utilisateur connecté car son id dans l'url et égal à sa session
-    ?>
+    
+?>
+
 
   <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -117,7 +93,7 @@ if (isset($_GET["id"]) && isset($_SESSION["id"]) && $_SESSION["id"] == $_GET["id
 					<td scrope="row"><?= $key->mdp; ?></td>
 					<td scrope="row"><?php
 
-if ($key->admin) {
+            if ($key->admin) {
                 echo "Oui";
             } else {
                 echo "Non";
