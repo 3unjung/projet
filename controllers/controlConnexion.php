@@ -1,4 +1,5 @@
 <?php
+
 if (isset($_POST["connexion"])) {
     $login = htmlspecialchars($_POST["login"]);
     $mdp = ($_POST["mdp"]);
