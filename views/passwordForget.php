@@ -1,4 +1,8 @@
 <?php session_start(); ?>
+<!-- 
+    * create 09-02-2020
+    * update 09-02-2020
+-->
 <!DOCTYPE html>
 <html lang="fr">
 <?php require("../controllers/connexion.php"); ?>
@@ -26,8 +30,7 @@ if (isset($_GET["id"]) && isset($_GET["link"])) {
 		</head>
 		<body>
 		  <div class="container-fluid">
-		    <!--contenaire parent qui prend tout le header de la page soit 900px-->
-		    <?php include("./headermvc.php"); ?> <br> <!-- importation l'header -->
+		    <?php include("./headermvc.php"); ?> <br> 
 		    <br>
 
 		    <div class="text-center">

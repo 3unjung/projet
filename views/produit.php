@@ -36,7 +36,7 @@
                 <fieldset>
 
 
-                    <label for="reference">R�rence : <input class="form-control" id="reference" type="text" name="reference"></label><br>
+                    <label for="reference">Rérence : <input class="form-control" id="reference" type="text" name="reference"></label><br>
                         <span id="reference_manquante"></span><br>
 
 

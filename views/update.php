@@ -15,9 +15,7 @@ $categorie = $result->fetchall(PDO::FETCH_OBJ); // récupère toutes les lignes 
 
 // récupération du produit selon son idans l'url
 $getProduct = $db->prepare("SELECT * FROM produits WHERE pro_id = ?");
-$getProduct->execute(array(
-	$_GET["pro_id"]
-));
+$getProduct->execute(array($_GET["pro_id"]));
 $infoProduct = $getProduct->fetch();
 
 // extraction des valeurs du produit
@@ -75,9 +73,9 @@ $couleurProduit = $infoProduct["pro_couleur"];
 							<label for="couleur">Couleur : <input value="<?php if (isset($couleurProduit)) { echo $couleurProduit; } ?>" class="form-control" id="couleur" type="text" name="couleur"></label><br>
 							<span id="couleur_manquante"></span><br>
 							
-							<label for="produit_bloquer">Produit bloquer : <input inputmode="produit_bloquer" type="radio" value="oui"> Oui <input type="radio" name="produit_bloquer" value="non"> Non </label><br>
+							<label for="produit_bloquer">Produit bloquer : <input inputmode="produit_bloquer" type="radio" value="oui"> Oui <input type="radio" name="produit_bloquer" value="non"> Non </label><br>							
 
-							<label for="photo_produit">Photo du produit : <input class="col-1-form-control btn" type="file" value="<?php if (isset($photoProduit)) { echo $photoProduit; } else { 'Insérer un fichier';} ?>" name="fichier"></label><br> <br>
+							<label for="photo">Photo : </label><input type="file" name="pro_photo"  class="form-control" value="<?= $row->pro_photo; ?>"><br>
 
 							<input type="submit" value="Valider" class="btn btn-dark" id="bouton_envoi" name="bouton_envoi">
 							<input type="reset" value="Anuler" class="btn btn-dark"id="bouton_annuler" name="bouton_cancel"><br>
