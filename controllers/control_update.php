@@ -68,7 +68,7 @@ $description = $_POST["description"]; // récupère la description du produit en
 $prix = (float)$_POST["prix"]; // récupère le prix du produit envoyé
 $stock = (int)($_POST["stock"]); // récupère la quantité du produit envoyée
 $couleur = $_POST["couleur"]; // récupère la couleur du produit envoyée
-$img = $_FILES["fichier"]; // recupère le nom de l'image du formulaire
+$img = $_FILES["pro_photo"]; // recupère le nom de l'image du formulaire
 $img_name=basename($img["name"]);
 $fichier_path = "../assets/img/" . $img_name;
 move_uploaded_file ($_FILES["fichier"]["tmp_name"] ,$fichier_path);
