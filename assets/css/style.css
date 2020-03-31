@@ -6,6 +6,11 @@ nav {
 
 }
 
+.img-fluid {
+    max-width: auto;
+    max-height: 200px;
+}
+
 nav ul,
 li,
 a {
@@ -13,7 +18,7 @@ a {
     list-style-type: none;
     display: flex;
     margin-right: 15px;
-    color: white;
+    color: blue;
 }
 
 .navbar-toggler
@@ -44,7 +49,7 @@ a:hover {
 a:visited {
 
     text-decoration: none;
-    color: white;
+    color: blue;
 }
 
 /* banière promotion */
@@ -53,11 +58,14 @@ a:visited {
 }
 
 /* media queries */
-@media screen and (max-width: 700px) {  /* ecran inferieur à 700px */
+@media screen and (max-width: 700px) {
+
+    /* ecran inferieur à 700px */
     #promotion_jarditou {
-        display: none; /* retire la promotion de jarditou */
+        display: none;
+        /* retire la promotion de jarditou */
     }
-    
+
     #acceuil {
         display: none;
     }

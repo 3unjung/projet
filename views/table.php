@@ -24,71 +24,75 @@
 </head>
 
 <body>
-  <div class="container-fluid">
-    <!--contenaire parent qui prend tout le header de la page soit 900px-->
-    <?php include("./headermvc.php"); ?> <br>
+  <!--contenaire parent qui prend tout le header de la page soit 900px-->
+  <?php include("./headermvc.php"); ?> <br>
 
 
-    <!--Tableau des articles-->
+  <!--Tableau des articles-->
+  <div class="text-center">
     <h3><strong>Tableau des articles</strong></h3>
-    <div class="table-responsive-col-xs=12 col-sm=12 col-md-12">
 
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th class="table-dark" scope="col">Clé:</th>
-            <th scope="col">Catégorie du produit:</th>
-            <th scope="col">Référence du produit:</th>
-            <th class="table-dark" scope="col">Nom du produit:</th>
-            <th scope="col">Description du produit:</th>
-            <th class="table-dark" scope="col">Prix:</th>
-            <th scope="col">Nombre d'unité en stock:</th>
-            <th scope="col">Couleur:</th>
-            <th scope="col">Photo:</th>
-            <th scope="col">Date d'ajout:</th>
-            <th scope="col">Date de modificiton:</th>
-            <th class="table-dark" scope="col">Bloquer le produit de la vente:</th>
-          </tr>
-        </thead>
+  </div>
 
-        <?php foreach ($produit as $key) { ?>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Clé:</th>
+        <th scope="col">Catégorie du produit:</th>
+        <th scope="col">Référence du produit:</th>
+        <th scope="col">Nom du produit:</th>
+        <th scope="col">Description du produit:</th>
+        <th scope="col">Prix:</th>
+        <th scope="col">Nombre d'unité en stock:</th>
+        <th scope="col">Couleur:</th>
+        <th scope="col">Photo:</th>
+        <th scope="col">Date d'ajout:</th>
+        <th scope="col">Date de modificiton:</th>
+        <th scope="col">Bloquer le produit de la vente:</th>
+      </tr>
+    </thead>
 
-          <td class="table-dark" scrope="row"><?= $key->pro_id; ?></td>
+    <?php foreach ($produit as $key) { ?>
+      <tbody>
+        <tr>
+
+          <td scrope="row"><?= $key->pro_id; ?></td>
 
           <td scrope="row"><?= $key->pro_cat_id; ?></td>
 
           <td scrope="row"><?= $key->pro_ref; ?></td>
 
-          <td class="table-dark" scope="row"><a href="./page.php?pro_id=<?= $key->pro_id; ?>"><?= $key->pro_libelle; ?></a></td>
+          <td scope="row"><a href="./page.php?pro_id=<?= $key->pro_id; ?>"><?= $key->pro_libelle; ?></a></td>
 
           <td scrope="row"><?= $key->pro_description; ?></td>
 
-          <td class="table-dark" scope="row"><?= $key->pro_prix; ?></td>
+          <td scope="row"><?= $key->pro_prix; ?></td>
 
           <td scrope="row"><?= $key->pro_stock; ?></td>
 
           <td scrope="row"><?= $key->pro_couleur; ?></td>
 
-          <td scope="row"><img class="img-fluid" src="../assets/img/<?= $key->pro_photo ?>"> </td>
+          <td scope="row"><img class="img-fluid" src="../assets/img/<?= $key->pro_photo ?>"></td>
 
           <td scrope="row"><?= $key->pro_d_ajout; ?></td>
 
           <td scrope="row"><?= $key->pro_d_modif; ?></td>
 
-          <td class="table-dark" scrope="row"><?= $key->pro_bloque; ?></td>
+          <td scrope="row"><?= $key->pro_bloque; ?></td>
 
-          </tr>
+        </tr>
+      </tbody>
 
-        <?php
-        }
-        ?>
-      </table> <br>
+    <?php
+    }
+    ?>
+  </table> <br>
 
 
-    </div>
-    <!-- footer-->
-    <?php include("./footer.php"); ?>
-    <!-- importe le fichier du footer -->
+  </div>
+  <!-- footer-->
+  <?php include("./footer.php"); ?>
+  <!-- importe le fichier du footer -->
 
 
   </div>

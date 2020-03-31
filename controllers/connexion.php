@@ -4,7 +4,7 @@ if (!function_exists("connexionBase")) {
   function connexionBase()
   {
      // Paramètre de connexion serveur
-     $host = "localhost:3308";
+     $host = "localhost:3306";
      $login= "root";     // Votre loggin d'accès au serveur de BDD 
      $password="";    // Le Password pour vous identifier auprès du serveur
      $base = "Jarditou";    // La bdd avec laquelle vous voulez travailler 
