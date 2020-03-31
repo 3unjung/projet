@@ -25,7 +25,7 @@ if (isset($_POST["inscription"])) // si le formulaire est envoyé
         $insert->bindValue(":email", $email);
         $insert->bindValue(":mdp", $mdp);
         $insert->execute();
-        header("location:  ../views/table.php"); // renvoit à la table des produits
+        header("location:  ../views/connect.php"); // renvoit à la table des produits
     } else {
         $erreur = "Tous les champs doivent être renseigner."; // gère les erreurs
     }

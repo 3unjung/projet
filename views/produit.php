@@ -69,6 +69,8 @@
                 <input type="submit" value="Valider" class="btn btn-dark" id="bouton_envoi" name="newProduct">
                 <input type="reset" value="Anuler" class="btn btn-dark" id="bouton_annuler" name="bouton_cancel"><br>
 
+
+
             </fieldset>
         </form><br>
 
