@@ -41,7 +41,7 @@
                 <select class="col-4 custom-select form-control" name="categorie" id="categorie">
 
                     <?php foreach ($categorie as $key) { ?>
-                       
+
                         <option value="<?php echo $key->cat_id; ?>"><?php echo $key->cat_nom; ?></option>
                     <?php } ?>
 
@@ -66,7 +66,7 @@
 
                 <input class="col-1-form-control btn" type="file" value="Inserer une image" name="fichier"><br><br>
 
-                <input type="submit" value="Valider" class="btn btn-dark" id="bouton_envoi" name="bouton_envoi">
+                <input type="submit" value="Valider" class="btn btn-dark" id="bouton_envoi" name="newProduct">
                 <input type="reset" value="Anuler" class="btn btn-dark" id="bouton_annuler" name="bouton_cancel"><br>
 
             </fieldset>
