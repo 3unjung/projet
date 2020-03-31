@@ -29,12 +29,9 @@ if (isset($_POST['newProduct'])) {
     $fichier_path = "../assets/img/" . $img_name;
     move_uploaded_file ($_FILES["fichier"]["tmp_name"] ,$fichier_path);
 
-    var_dump($reference ."<br>". $categorie ."<br>". $libelle ."<br>".$description ."<br>".$prix ."<br>". $stock."<br>". $img . "<br>" . $couleur);
-
-    if (!empty($_POST["categorie"]) || !empty($_POST["reference"]) || !empty($_POST["libelle"]) || !empty($_POST["prix"]) || !empty($_POST["stock"]) || !empty($_POST["couleur"] || !empty($_FILES["fichier"]))) {
+    if (empty($categorie) || empty($reference) || empty($description) || empty($libelle) || empty($couleur) || empty($img_name) || empty($stock) || empty($prix)) {
         $erreur = "Les champs requis doivent être reneigner !";
         echo $erreur;
-
     } else {
         $insert = $bd->prepare("INSERT INTO
         produits (pro_cat_id, pro_ref, pro_libelle, pro_description, pro_prix, pro_stock, pro_couleur, pro_photo, pro_d_ajout)
@@ -49,8 +46,7 @@ if (isset($_POST['newProduct'])) {
         $insert->bindValue(":couleur", $couleur);
         $insert->bindValue(":format", $img_name);
         $insert->execute();
-        var_dump($insert->execute());
-        // header("location: ../views/table.php"); 
+        header("location: ../views/table.php"); 
     }
 }
 
