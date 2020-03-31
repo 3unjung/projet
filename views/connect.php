@@ -45,7 +45,6 @@ if (isset($_POST["passwordForget"])) {
 
 
 <body>
-  <div class="container-fluid">
     <!--contenaire parent qui prend tout le header de la page soit 900px-->
     <?php include("./headermvc.php"); ?> <br> <!-- importation l'header -->
     <br>

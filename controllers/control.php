@@ -80,7 +80,6 @@ $insert = $bd->prepare( // crée une requète préparer
                          // insère dans latable produits en spécifiant les colonnes
     "INSERT INTO
 produits (pro_cat_id, pro_ref, pro_libelle, pro_description, pro_prix, pro_stock, pro_couleur, pro_photo, pro_d_ajout)
-
 VALUES(:categorie, :reference, :libelle, :description, :prix, :stock, :couleur, :format, now())");
 
 // ajoute les données envoyés en renommant le champs par sécurité

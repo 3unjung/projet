@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 <?php require("../controllers/connexion.php"); ?>
-<?php include("../controllers/controlSession.php"); ?>
 <!-- vérifie si l'utilisateur ne fait pas n'importe quoi -->
 
 
@@ -16,7 +15,6 @@
 
 
 <body>
-	<div class="container-fluid">
 		<!--contenaire parent qui prend tout le header de la page soit 900px-->
     <?php include("./headermvc.php"); ?> <br>
 		<!-- importation l'header -->
@@ -26,23 +24,23 @@
 
 			<!-- formulaire-->
 
-			<form action="" method="POST" id="inscription">
+			<form action="../controllers/controlSession.php" method="POST" id="inscription">
 				<fieldset>
 					<br>
 					<legend>
 						<strong>Inscription</strong>
 					</legend>
           <?php
-        if (isset($erreur)) {
-            echo "<h5><font color ='red'>" . $erreur . "</font></h5>"; // affiche les erreurs
-        }
+			if (isset($erreur)) {
+				echo "<h5><font color ='red'>" . $erreur . "</font></h5>"; // affiche les erreurs
+			}
         ?>
 		  <br>
 					<label for="prenom">Votre prenom : <input class="form-control" id="prenom" type="text" value="<?php if (isset($prenom)) { echo $prenom; } ?>" name="prenom"></label><br>
 					<label for="nom">Votre nom :<input class="form-control" id="nom" value="<?php if (isset($nom)) {  echo $nom; } ?>" type="text" name="nom"></label><br>
 					<label for="email">Votre adresse mail :<input class="form-control" id="email" type="email" value="<?php if (isset($email)) { echo $email; } ?>" name="email"></label><br>
 
-					<label for="identifiant">Votre identifiant : <input class="form-control" id="identifiant" type="text" value="<?php if (isset($identifiant)) { echo $idenfiant; } ?>" name="identifiant"></label><br>
+					<label for="identifiant">Votre identifiant : <input class="form-control" id="identifiant" type="text" value="<?php if (isset($identifiant)) { echo $identifiant; } ?>" name="identifiant"></label><br>
 					<label for="mdp">Votre mot de passe :<input class="form-control" id="mdp" type="password" name="mdp"> </label><br><br><br>
 					<input type="submit" name="inscription" value="Je m'inscris !" class="btn btn-dark" id="inscription">
 

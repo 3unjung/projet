@@ -24,15 +24,16 @@
   </head>
 
   <body>
-    <div class="container-fluid">
 
       <?php include("./headermvc.php"); ?> <br>
       <div class="container-fluid row">
+
+      <!-- récupère le boolen de la colonne administrateur -->
         <?php
-        $getUsersId = $_SESSION["id"]; // recupère l'id de l'utilisateur stocké dans le cookie
-        $requete = $db->prepare("SELECT admin from users where id = " . $_SESSION['id']); // prépare une requète 
-        $requete->execute(array($getUsersId)); // retourne la ligne correspondante au tableau selon l'id de la session
-        $userinfo = $requete->fetch(); // stock l'information
+        $getUsersId = $_SESSION["id"]; 
+        $requete = $db->prepare("SELECT admin from users where id = " . $_SESSION['id']);  
+        $requete->execute(array($getUsersId)); 
+        $userinfo = $requete->fetch(); 
         ?>
 
         <?php if ($userinfo["admin"] == 1) { ?>
@@ -41,10 +42,10 @@
         <?php } ?>
 
       </div>
-      
+
       <div class="text-center"><br><br>
 
-        <?php while($key) { ?>
+        <?php while ($key) { ?>
 
           <div class="row-xl-1 row-lg-1 row-md-1 row-sm-1 row-xs-2">
             <!-- Récupère la prochaine ligne et la retourne en tant qu'objet -->

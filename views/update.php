@@ -25,6 +25,7 @@ $decriProduit = $infoProduct["pro_description"];
 $prixProduit = $infoProduct["pro_prix"];
 $stockProduit = $infoProduct["pro_stock"];
 $couleurProduit = $infoProduct["pro_couleur"];
+$photo = $infoProduct["pro_photo"];
 
 ?>
 <head>
@@ -36,7 +37,6 @@ $couleurProduit = $infoProduct["pro_couleur"];
 	<title>Modifier des produits</title>
 </head>
 <body>
-	<div class="container-fluid">
 		<!-- importation de l'header -->
         <?php include("./headermvc.php"); ?>
         <h3 class="text-center">Modifier un produit :</h3>
@@ -75,7 +75,7 @@ $couleurProduit = $infoProduct["pro_couleur"];
 							
 							<label for="produit_bloquer">Produit bloquer : <input inputmode="produit_bloquer" type="radio" value="oui"> Oui <input type="radio" name="produit_bloquer" value="non"> Non </label><br>							
 
-							<label for="photo">Photo : </label><input type="file" name="pro_photo"  class="form-control" value="<?= $row->pro_photo; ?>"><br>
+							<label for="photo">Photo du produit : </label><input type="file" name="pro_photo"  class="form-control" value="<?php if (isset($photo)) { echo $photo;} ?>"><br>
 
 							<input type="submit" value="Valider" class="btn btn-dark" id="bouton_envoi" name="bouton_envoi">
 							<input type="reset" value="Anuler" class="btn btn-dark"id="bouton_annuler" name="bouton_cancel"><br>

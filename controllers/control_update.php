@@ -6,7 +6,6 @@
 <?php
 require("./connexion.php");
 $pro_id = $_REQUEST["pro_id"]; // désigne requet quand on ne sait pas le get ou le post
-// variables
 $controlreference = "/[\p{L}0-9 -]+/u"; // autorise tous les espaces et caractères non spéciaux 
 $controlcouleur = "#[a-z]#"; // autorise que des lettres de a -> z
 $controldate = "/([0-2][0-9]|(3)[0-1])(/)(((0)[0-9])|((1)[0-2]))(/)\d{4}$/"; // date au format dd/mm/yy */

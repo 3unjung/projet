@@ -7,10 +7,10 @@
 <?php
 
 if (isset($_POST["id"])) {
-    $userRole = getUsersInfo($_POST["id"])["admin"]; // appel la fonction et envoit la ligne admin
-    setUsersRole((int)!$userRole, $_POST["id"]); // transforme le rôle de l'utilisateur en entier 
+  $userRole = getUsersInfo($_POST["id"])["admin"]; // appel la fonction et envoit la ligne admin
+  setUsersRole((int) !$userRole, $_POST["id"]); // transforme le rôle de l'utilisateur en entier 
 
-    /*
+  /*
      * trouve le role de l'utilisateur avec son id
      * permute son role avec !
      */
@@ -22,95 +22,89 @@ if (isset($_POST["id"])) {
  * on récupère ses informations et on l'utilisera plus tard
  */
 if (isset($_GET["id"]) && isset($_SESSION["id"]) && $_SESSION["id"] == $_GET["id"]) {
-    $userinfo = getUsersInfo($_GET["id"]); // retourne les informations de l'utilisateur connecté car son id dans l'url et égal à sa session
-    
+  $userinfo = getUsersInfo($_GET["id"]); // retourne les informations de l'utilisateur connecté car son id dans l'url et égal à sa session
+
 ?>
 
 
   <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-	crossorigin="anonymous">
-<link rel="stylesheet" href="../assets/css/style.css">
-<title>Mon compte</title>
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>Mon compte</title>
+  </head>
 
 
-<body>
-	<div class="container-fluid">
-		<!--contenaire parent qui prend tout le header de la page soit 900px-->
-      <?php include("./headermvc.php"); ?> <br> <br>
+  <body>
+    <!--contenaire parent qui prend tout le header de la page soit 900px-->
+    <?php include("./headermvc.php"); ?> <br> <br>
 
-		<div class="text-center">
-			<h1>Bonjour <?php echo $userinfo["identifiant"] . "!" ?></h1>
-			<form>
-				<fieldset>
-					<input type="submit" value="Editer mon profil" class="btn btn-dark"
-						name="edit">
-				</fieldset>
-			</form>
-			<br>
-			<br>
-			<br>
+    <div class="text-center">
+      <h1>Bonjour <?php echo $userinfo["identifiant"] . "!" ?></h1>
+      <form>
+        <fieldset>
+          <input type="submit" value="Editer mon profil" class="btn btn-dark" name="edit">
+        </fieldset>
+      </form>
+      <br>
+      <br>
+      <br>
 
-		</div>
-      <?php
+    </div>
+    <?php
     if ($userinfo["id"] == $_SESSION["id"]) {
-        ?>
+    ?>
 
-      <?php
+    <?php
     }
     ?>
-      <?php
+    <?php
     $requete = "SELECT * FROM users";
     $result = $db->query($requete);
     $infousers = $result->fetchall(PDO::FETCH_OBJ);
 
     if ($userinfo["admin"] == 1) {
-        ?>
-        <div class="table-responsive col-xs-8 col-sm-8 col-md-12 ">
+    ?>
+      <div class="table-responsive col-xs-8 col-sm-8 col-md-12 ">
 
-			<table class="table table-striped table-hover table-bordered">
+        <table class="table table-striped table-hover table-bordered">
 
-				<!-- tableau des utilisateurs -->
-				<tr>
-					<th class="table-dark">Prénom</th>
-					<th class="table-dark">Nom</th>
-					<th class="table-dark">Identifiant</th>
-					<th class="table-dark">Mot de passe</th>
-					<th class="table-dark">Administrateur</th>
-				</tr>
-            <?php foreach ($infousers as $key) { ?>
-              <!-- sélectionne tous les id des utilisateurs -->
-				<tr>
-					<td scrope="row"><?= $key->prenom; ?></td>
-					<td scrope="row"><?= $key->nom; ?></td>
-					<!-- récupère l'identifiant dans la base de donnée -->
-					<td scrope="row"><?= $key->identifiant; ?></td>
-					<td scrope="row"><?= $key->mdp; ?></td>
-					<td scrope="row"><?php
+          <!-- tableau des utilisateurs -->
+          <tr>
+            <th class="table-dark">Prénom</th>
+            <th class="table-dark">Nom</th>
+            <th class="table-dark">Identifiant</th>
+            <th class="table-dark">Mot de passe</th>
+            <th class="table-dark">Administrateur</th>
+          </tr>
+          <?php foreach ($infousers as $key) { ?>
+            <!-- sélectionne tous les id des utilisateurs -->
+            <tr>
+              <td scrope="row"><?= $key->prenom; ?></td>
+              <td scrope="row"><?= $key->nom; ?></td>
+              <!-- récupère l'identifiant dans la base de donnée -->
+              <td scrope="row"><?= $key->identifiant; ?></td>
+              <td scrope="row"><?= $key->mdp; ?></td>
+              <td scrope="row"><?php
 
-            if ($key->admin) {
-                echo "Oui";
-            } else {
-                echo "Non";
-            }
-            ?><form class="table" action=""
-							method="POST">
-							<fieldset>
-								<input type="submit" value="<?= $key->id ?>"
-									class="btn btn-dark" name="id">
-							</fieldset>
-						</form></td>
-				</tr>
-          <?php
+                                if ($key->admin) {
+                                  echo "Oui";
+                                } else {
+                                  echo "Non";
+                                }
+                                ?><form class="table" action="" method="POST">
+                  <fieldset>
+                    <input type="submit" value="<?= $key->id ?>" class="btn btn-dark" name="id">
+                  </fieldset>
+                </form>
+              </td>
+            </tr>
+        <?php
 
-}
-    } else {
-        echo "<p>blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+          }
+        } else {
+          echo "<p>blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
             blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
             blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
             blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
@@ -119,20 +113,21 @@ if (isset($_GET["id"]) && isset($_SESSION["id"]) && $_SESSION["id"] == $_GET["id
             blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
             blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
             blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah </p><br>";
-    }
-    ?>
-          </table>
-		</div>
-		<br>
-		<br>
-		<div>
-          <?php include("./footer.php"); ?>
-        </div>
+        }
+        ?>
+        </table>
+      </div>
+      <br>
+      <br>
+      <div>
+        <?php include("./footer.php"); ?>
+      </div>
 
-</body>
+  </body>
 <?php
 } // fin de la boucle
-else {}
+else {
+}
 ?>
 
 </html>
