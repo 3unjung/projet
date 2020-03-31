@@ -6,7 +6,7 @@ if (isset($_SESSION["id"])) {
   $requete->execute(array($_SESSION["id"]));
   $usersinfo = $requete->fetch();
 
-  echo "<h5>Vous êtes connecté," . $usersinfo["identifiant"] . "</h5>";
+  //echo "<h5>Vous êtes connecté," . $usersinfo["identifiant"] . "</h5>";
   $myAccountLI = '<li class="nav-item"><a class="nav-link" style="color: white" href="profil.php?id=' . $_SESSION["id"] . '">Mon compte</a></li>';
   $udprequest = $db->prepare("SELECT admin from users where id = ?");
   $udprequest->execute(array($_SESSION["id"]));
