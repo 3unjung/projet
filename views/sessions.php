@@ -24,7 +24,7 @@
 
 			<!-- formulaire-->
 
-			<form action="../controllers/controlSession.php" method="POST" id="inscription">
+			<form action="../controllers/control_session.php" method="POST" id="inscription">
 				<fieldset>
 					<br>
 					<legend>
