@@ -27,19 +27,18 @@
 
       <?php include("./headermvc.php"); ?> <br>
       <div class="container-fluid row">
-
-      <!-- récupère le boolen de la colonne administrateur -->
         <?php
-        $getUsersId = $_SESSION["id"]; 
-        $requete = $db->prepare("SELECT admin from users where id = " . $_SESSION['id']);  
-        $requete->execute(array($getUsersId)); 
-        $userinfo = $requete->fetch(); 
-        ?>
+        if (isset($_SESSION["id"])) {
+          // récupère le boolen de la colonne administrateur
+          $getUsersId = $_SESSION["id"]; 
+          $requete = $db->prepare("SELECT admin from users where id = " . $_SESSION['id']);  
+          $requete->execute(array($getUsersId)); 
+          $userinfo = $requete->fetch(); 
 
-        <?php if ($userinfo["admin"] == 1) { ?>
-          <a class="col-1 btn btn-lg btn-dark" href="./update.php?pro_id=<?= $key->pro_id ?>" role="alert">Modifier</a>
-          <a class="col-1 btn btn-lg btn-dark" name="id" href="../controllers/control_delete.php?pro_id=<?= $key->pro_id ?>" role="button">Supprimer</a>
-        <?php } ?>
+          if ($userinfo["admin"] == 1) { ?>
+            <a class="col-1 btn btn-lg btn-dark" href="./update.php?pro_id=<?= $key->pro_id ?>" role="alert">Modifier</a>
+            <a class="col-1 btn btn-lg btn-dark" name="id" href="../controllers/control_delete.php?pro_id=<?= $key->pro_id ?>" role="button">Supprimer</a>
+        <?php } } ?>
 
       </div>
 
